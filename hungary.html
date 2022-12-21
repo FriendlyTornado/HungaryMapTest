@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Animals Sancturaries in Hungary</title>
+<link href="css/multiColumnTemplate.css" rel="stylesheet" type="text/css">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" type="text/css"/>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="primary_header">
+      <h1 class="title">Animal Sanctuaries</h1>
+    </div>
+    <div class="secondary_header" id="map">
+
+    </div>
+
+  </header>
+</div>
+<script>
+    mapboxgl.accessToken = "pk.eyJ1IjoiamVtYzU5NTgiLCJhIjoiY2xiYnZpbGZzMDliODNvcGNseWF6ZzdhayJ9.RMziQS3Fa5xiDmUtJ8FXGA"; 
+
+    const map = new mapboxgl.Map({
+      container: "map", // The container ID
+      style: "mapbox://styles/jemc5958/clbx3p3bi000015o3sqy7h8jp", // The map style to use
+      center: [19.053, 47.508], // Starting position [lng, lat]
+      zoom: 6 // Starting zoom level
+    });
+	  // Set marker options.
+const marker = new mapboxgl.Marker({
+    color:"#fcba03",
+    draggable: false
+}).setLngLat([19.255547856547405, 47.6318263173427])
+    .setPopup(new mapboxgl.Popup().setHTML("<h1>Bear Farm: Veresegyház.</h1><h3>bear sanctuary with wolves, reindeer & raccoons</h3>"))
+    .addTo(map);
+	  const marker2 = new mapboxgl.Marker({
+    color: "#fcba03",
+    draggable: false
+}).setLngLat([18.510173899725146, 46.17785111363069])
+    .setPopup(new mapboxgl.Popup().setHTML("<h1>Repzootic Animal Center: Erdősmecske</h1><h3>A new zoo / sanctuary in Hungary who gives to place to small mammals, birds, reptiles and fishes. During the visit is is possible to come in close contact with some of the animals.</h3>"))
+    .addTo(map);
+  </script> 
+<footer class="secondary_header footer">
+  <div class="copyright">&copy;2022 - <strong>UR MOM</strong></div>
+</footer>
+</body>
+</html>
